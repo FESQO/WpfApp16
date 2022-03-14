@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp15"
+        mc:Ignorable="d"
+        Title="БД Студенты и группы" d:Width="500" d:Height="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Справочники">
+                <MenuItem Header="Группы">
+                    <MenuItem Header="Создать группу" Command="{Binding CreateGroup}"/>
+                    <MenuItem Header="Список групп" Command="{Binding ViewGroups}"/>
+                </MenuItem>
+                <MenuItem Header="Студенты">
+                    <MenuItem Header="Создать студента" Command="{Binding CreateStudent}"/>
+                    <MenuItem Header="Список студентов" Command="{Binding ViewStudents}"/>
+                </MenuItem>
+                <MenuItem Header="Кураторы">
+                    <MenuItem Header="Создать куратора" Command="{Binding CreateCurator}"/>
+                    <MenuItem Header="Список кураторов" Command="{Binding ViewCurator}"/>
+                </MenuItem>
+                <MenuItem Header="Специальности">
+                    <MenuItem Header="Создать специальность" Command="{Binding CreateSpecial}"/>
+                    <MenuItem Header="Список специальностей" Command="{Binding ViewSpecial}"/>
+                </MenuItem>
+                <MenuItem Header="Преподы">
+                    <MenuItem Header="Создать препода" Command="{Binding CreatePrepod}"/>
+                    <MenuItem Header="Список преподов" Command="{Binding ViewPrepod}"/>
+                </MenuItem>
+                <MenuItem Header="Дисциплины">
+                    <MenuItem Header="Создать дисциплину" Command="{Binding CreateDiscipline}"/>
+                    <MenuItem Header="Список дисциплин" Command="{Binding ViewDiscipline}"/>
+                </MenuItem>
+                <MenuItem Header="Журнал">
+                    <MenuItem Header="Создать запись в журнал" Command="{Binding CreateJournal}"/>
+                    <MenuItem Header="Записи в журнале" Command="{Binding ViewJournal}"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Frame Content="{Binding CurrentPage}" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
